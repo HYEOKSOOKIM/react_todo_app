@@ -1,19 +1,24 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
-import NotFound from "./components/NotFound";
-import TodoList from "./components/TodoList";
+
 import Navigation from "./components/Navigation";
+import TodoList from "./components/TodoList";
+import NotFound from "./components/NotFound";
+
+const Home = lazy(() => import("./components/Home"));
 
 function App() {
   return (
     <div>
       <Navigation />
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/todoList" element={<TodoList />}></Route>
-        <Route path="/*" element={<NotFound />}></Route>
-      </Routes>
+
+      <Suspense fallback={<div>로딩중...</div>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/todoList" element={<TodoList />} />
+          <Route href="https://www.naver.com*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
     </div>
   );
 }

@@ -7,7 +7,7 @@ function Navigation() {
     <nav>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/TodoList">TodoList</NavLink>
-      <NavLink to="wwww.naver.com">네이버</NavLink>
+      <NavLink to="https://www.naver.com">네이버</NavLink>
     </nav>
   );
 }
