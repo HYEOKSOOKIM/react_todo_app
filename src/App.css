@@ -1,0 +1,11 @@
+.profile-card {
+  background-color: aliceblue;
+  padding: 10px;
+  width: 400px;
+  border: 0px solid gray;
+  text-align: center;
+}
+
+p {
+  font-style: oblique;
+}
